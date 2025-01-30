@@ -1,0 +1,52 @@
+/********************************************************************************************************************/
+public class Animal implements Comparable<Animal> {
+   int age;
+   String name;
+   int weight;
+   public Animal(int age,String name,int weight){
+      this.name=name;
+      this.age=age;
+      this.weight=weight;
+   }
+
+   @Override
+   public String toString(){
+         return "Animal{ "+
+         "age: "+age+
+         "name: "+name+
+         "weight: "+weight+"}"+"\n";
+   }
+   @Override
+   public int compareTo(Animal o){
+        return this.age-o.age;
+   }
+}
+
+/*************************************************************************************************************************************/
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+public class LearnComparator {
+   public static void main(String[] args) {
+          Animal a1=new Animal(12, "Jorg", 20);
+          Animal a2=new Animal(15, "Kate", 29);
+          Animal a3=new Animal(18, "Michel", 50);
+          Animal a4=new Animal(12, "Stephen", 20);
+          Animal a5=new Animal(10, "mac", 80);
+
+          List<Animal>dogs=new ArrayList<>();
+          dogs.add(a5);
+          dogs.add(a4);
+          dogs.add(a3);
+          dogs.add(a2);
+          dogs.add(a1);
+          System.out.println(dogs);
+          Collections.sort(dogs);
+          System.out.println(dogs);
+          
+   }
+}
+
+
